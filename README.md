@@ -1,0 +1,2 @@
+# Super-Cap-Tester-C-Program
+This is a C-Program I am working on for an experimental super-cap tester... The hardware is an atx-psu with 2 relays annd an arduino. I am using a program called CoolTerm that takes the serial printout from the arduino and takes those sensor values, converts them to a text file.. The my c program opens the said text file and converts the ANSCII text char strings into float variables... Then I can do some math, there is still lots to do befor the program is done. 
