@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#define Tao 0.632
+#define Tao 0.368
 int main(){
 	printf("\nThis is how far I have got on the C-Program for the Super-Cap Tester Project\n\n");
 	FILE *fpointer; 
@@ -25,14 +25,28 @@ int main(){
 			    v=x/d*t;
 			    p=x;
 				printf("The initial voltage accross the cap: %4.3fV\n",v);
-				break;
-				}
-	if (inputfloat<=p*Tao){printf("This is the line that the V drops 1 Tao\n\n");
-	}
-		}	
-    printf("Where each line is represents 125mS\n");
+				printf("The value of p on this line is: %f\n",p);
+				break;}
+					if (inputfloat<=p*Tao){
+		printf("\nThis is on line: %d\n\n",line);
+	    float stopper=inputfloat;
+		float timeinSeconds=line*0.125;
+		int loadresistanceOhms=330;
+		printf("The time period for the voltage to drop one Tao is:%3.3f Seconds\n\n",timeinSeconds);
+		printf("The capacitance = Time (Seconds) divided by Load(Ohms)\n\n");
+		printf("Load Resistance: %d Ohms\n\n",loadresistanceOhms);
+		float cValueinFarad=timeinSeconds/loadresistanceOhms;
+       	printf("The capacitance is: %f Farad\n\n",cValueinFarad);
+       	float cValueinuF=cValueinFarad*1000000;
+       	printf("The value of the tested cap in microFarad is: %8.2f uF\n\n",cValueinuF);
+       	if (inputfloat<=stopper){break;
+		   }
+		           }}   
+	printf("Looks like the program is getting there!!! :)\n");
+	printf("Where each line is represents 125mS\n");
     printf("We have successfully converted char string to integer!\n");
     printf("It is slow progress but I am gradually getting better at C Programing\n\n");
     printf("Peace\n");
+    
     return (0);
 	}
